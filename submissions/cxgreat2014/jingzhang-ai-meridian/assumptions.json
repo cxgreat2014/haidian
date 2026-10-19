@@ -1,11 +1,75 @@
 {
-  "schema_version": "0.1.0",
-  "assumptions": [
-    {
-      "id": "A-CONTROLS-001",
-      "status": "pending_professional_confirmation",
-      "statement": "Detailed regulatory controls, road redlines, ownership, municipal utilities, and engineering constraints must be confirmed from official attachments before statutory use.",
-      "impact": "The package can be reviewed as a formal AI submission only for provided official boundaries and submitted design layers; statutory controls still need professional confirmation."
-    }
-  ]
+ "schema_version": "0.1.0",
+ "assumptions": [
+  {
+   "id": "A-CONTROLS-001",
+   "status": "pending_professional_confirmation",
+   "statement": "控规条件（容积率、建筑高度、建筑密度、绿地率、退线）、道路红线、权属地块、市政管线与工程约束均未随公开资料包提供。",
+   "impact": "本方案所有开发强度、建筑量与拆改留内容均为概念建议；metrics.json 中 floor_area_ratio、building_height_m_max、total_floor_area_sqm 保持 unknown；取得官方控规后须整体复算。",
+   "recalc_trigger": "官方控规或任务书附件发布"
+  },
+  {
+   "id": "A-BOUNDARY-001",
+   "status": "provisional_geometry_in_use",
+   "statement": "总体设计范围使用仓库维护者依据公告文字四至与面积约值推定的临时粗略边界（PROV-SITE-001，boundary_precision=provisional_rough），官方精确红线未公开。",
+   "impact": "site_area_sqm 及全部面积类指标均为临时边界内的概念复算值，置信度 medium/low；不作为精确面积或官方红线依据。",
+   "recalc_trigger": "官方 SITE_BOUNDARY polygon 发布后对全部图层与指标重算"
+  },
+  {
+   "id": "A-KEYAREA-001",
+   "status": "provisional_geometry_in_use",
+   "statement": "三处重点区域（众智园192.1ha、AI原点社区104.3ha、大钟寺72.0ha）使用公告名义面积对应的临时粗略矩形范围（PROV-KEY-001/002/003）。",
+   "impact": "重点区域详细设计为方向性概念方案；key_area_*_calc_sqm 为临时范围复算值；公告未给出片区四至。",
+   "recalc_trigger": "官方重点区 polygon 发布后重算片区指标与图纸"
+  },
+  {
+   "id": "A-ROAD-001",
+   "status": "inferred_existing_conditions",
+   "statement": "roads.geojson 中 geometry_role=existing_condition 的现状道路走廊基于公开地图常识推断，confidence=low，不是道路红线；实际线位、断面与权属以官方资料为准。",
+   "impact": "交通微循环与站点一体化仅为概念组织；不产生工程线位结论。",
+   "recalc_trigger": "官方道路红线/交通专项资料发布"
+  },
+  {
+   "id": "A-BUILDING-001",
+   "status": "concept_quantity_only",
+   "statement": "缺少现状建筑轮廓、高度、用途、建成年代与权属底数；buildings.geojson 为概念体量（用于空间组织表达），renewal_category 为拆改留策略的概念比例演示。",
+   "impact": "building_footprint_area_sqm、building_density、concept_floor_area_estimate_sqm 均为概念设计量，非现状统计或法定规模。",
+   "recalc_trigger": "现状建筑测绘与权属资料到位后逐地块复核"
+  },
+  {
+   "id": "A-HERITAGE-001",
+   "status": "conservative_design_posture",
+   "statement": "清华园车站旧址、清河老站房等文保对象的保护范围与建设控制地带坐标未公开；本方案遗产叙事锚点采用公开报道事实，空间设计在临时边界内采取保守避让姿态。",
+   "impact": "地标与公共空间节点均为概念选址；涉及文保的建设行为须另行履行文物报批程序。",
+   "recalc_trigger": "文物主管部门保护范围图件发布"
+  },
+  {
+   "id": "A-MUNICIPAL-001",
+   "status": "pending_professional_confirmation",
+   "statement": "市政管线、消防、防洪排涝与海绵城市条件未公开。",
+   "impact": "市政与新型基础设施章节仅为体系建议，不含管线迁改或工程容量结论。",
+   "recalc_trigger": "市政专项资料发布"
+  },
+  {
+   "id": "A-SERVICE-001",
+   "status": "pending_professional_confirmation",
+   "statement": "公共服务设施（学校、医疗、养老等）现状底数未随资料包提供。",
+   "impact": "公共服务设施内容为体系与清单建议，设施容量须以官方底数复核。",
+   "recalc_trigger": "官方公共服务设施数据发布"
+  },
+  {
+   "id": "A-EXTDATA-001",
+   "status": "source_variance_noted",
+   "statement": "外部公开报道存在口径差异：遗址公园总面积有“约70公顷”（2024年报道）与“约53公顷”（2026年二期建成报道）两种口径；2026年4月市科委转载报道称“学北园AI自主创新加速区”，2026年5月9日正式公告为“众智园AI自主创新加速区”；京张铁路历史里程原点有柳村与西直门两种说法，未获权威统一。",
+   "impact": "正文引用时注明口径与年份；品牌叙事中的“新零公里”装置为概念纪念动作，不主张改写历史里程原点。",
+   "recalc_trigger": "官方统一口径或资格预审附件澄清"
+  },
+  {
+   "id": "A-NETWORK-001",
+   "status": "data_acquisition_limitation",
+   "statement": "计划中的 OSM 现状 POI/路网基线快照因投稿环境网络受限（Overpass 与 OSM API 均不可达）未能采集；现状诊断改以官方公告、政府公开报道与仓库资料为据。",
+   "impact": "现状体检深度受限；方案保留基线数据接口设计，待可联网环境按 docs/data-workflow.md 补采并登记。",
+   "recalc_trigger": "开放数据通道可用后补采并更新现状诊断"
+  }
+ ]
 }

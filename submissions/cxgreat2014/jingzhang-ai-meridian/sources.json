@@ -1,47 +1,421 @@
 {
-  "schema_version": "0.1.0",
-  "sources": [
-    {
-      "id": "SITE-PACKAGE",
-      "path": "brief/site-package/",
-      "source_type": "official_public",
-      "usage": "Project brief, enums, allowed design space, ranges, and schemas."
-    },
-    {
-      "id": "SOURCE-REGISTRY",
-      "path": "data/source_registry.json",
-      "source_type": "repository_public_registry",
-      "usage": "Public/cleared/provisional source usability registry; distinguishes formal-ready, background-only, provisional-only, and needs-review materials."
-    },
-    {
-      "id": "PROCESSED-FACT-PACK",
-      "path": "data/processed/agent_fact_pack.md",
-      "source_type": "repository_processed_reference",
-      "usage": "Agent-readable navigation layer for scopes, required tasks, source-use boundaries, and missing-data checklist; not a new authority source."
-    },
-    {
-      "id": "BOUNDARY-SOURCE",
-      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
-      "source_type": "agent_inferred_from_public_data",
-      "usage": "Submitted site boundary geometry source (provisional)."
-    },
-    {
-      "id": "KEY-AREA-SOURCE",
-      "path": "brief/site-package/geometry/provisional_boundaries.geojson",
-      "source_type": "agent_inferred_from_public_data",
-      "usage": "Three required detailed-design key area boundaries (provisional)."
-    },
-    {
-      "id": "OFFICIAL-ANNOUNCEMENT",
-      "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
-      "source_type": "official_public",
-      "usage": "Official announcement tasks, scope levels, key areas, language, and deliverable context."
-    },
-    {
-      "id": "AGENT-TASKBOOK",
-      "path": "brief/site-package/agent_taskbook.json",
-      "source_type": "user_provided_cleared",
-      "usage": "Agent-facing open-call principles, six required agent tasks, scenario/branding/operation requirements, and boundary clause."
-    }
-  ]
+ "schema_version": "0.1.0",
+ "sources": [
+  {
+   "id": "SITE-PACKAGE",
+   "path": "brief/site-package/",
+   "source_type": "official_public",
+   "publisher": "open-city-ai/haidian 仓库维护者（依据官方公告整理）",
+   "usage": "项目任务书结构化数据、图层与枚举、设计空间规则、指标口径与 schema。",
+   "usable_for": "formal 任务依据（范围、任务、枚举、schema）",
+   "not_usable_for": "官方红线或控规条件"
+  },
+  {
+   "id": "SOURCE-REGISTRY",
+   "path": "data/source_registry.json",
+   "source_type": "repository_public_registry",
+   "publisher": "open-city-ai/haidian 仓库维护者",
+   "usage": "公开/清权/临时资料的可用性登记，区分 formal-ready / background_only / provisional_only。",
+   "usable_for": "来源可用性判断",
+   "not_usable_for": "内容本身的原始权威"
+  },
+  {
+   "id": "PROCESSED-FACT-PACK",
+   "path": "data/processed/agent_fact_pack.md",
+   "source_type": "repository_processed_reference",
+   "publisher": "open-city-ai/haidian 仓库维护者",
+   "usage": "三层范围、任务索引、资料用途与缺口清单的导航层。",
+   "usable_for": "任务导航与缺口清单",
+   "not_usable_for": "新的权威依据"
+  },
+  {
+   "id": "BOUNDARY-SOURCE",
+   "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+   "source_type": "agent_inferred_from_public_data",
+   "publisher": "open-city-ai/haidian 仓库维护者",
+   "published_date": "2026-06-05",
+   "usage": "投稿 site_boundary（总体设计范围）临时粗略几何来源。",
+   "usable_for": "临时生成、可视化、自检",
+   "not_usable_for": "官方红线、审批依据、精确面积、正式评分"
+  },
+  {
+   "id": "KEY-AREA-SOURCE",
+   "path": "brief/site-package/geometry/provisional_boundaries.geojson",
+   "source_type": "agent_inferred_from_public_data",
+   "publisher": "open-city-ai/haidian 仓库维护者",
+   "published_date": "2026-06-05",
+   "usage": "三处重点区域（众智园/AI原点社区/大钟寺）临时粗略几何来源。",
+   "usable_for": "临时生成、可视化、自检",
+   "not_usable_for": "官方片区边界、审批依据、正式评分"
+  },
+  {
+   "id": "OFFICIAL-ANNOUNCEMENT",
+   "url": "https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html",
+   "source_type": "official_public",
+   "publisher": "北京市规划和自然资源委员会海淀分局",
+   "published_date": "2026-05-09",
+   "accessed_date": "2026-10-19",
+   "usage": "官方征集公告：项目名称、主办承办、三层范围、面积约值、设计任务、成果深度。",
+   "usable_for": "formal 任务依据（公告文字口径）",
+   "not_usable_for": "精确 polygon、道路红线、法定控规或实施承诺"
+  },
+  {
+   "id": "AGENT-TASKBOOK",
+   "path": "brief/site-package/agent_taskbook.json",
+   "source_type": "user_provided_cleared",
+   "publisher": "用户提供清权任务书（仓库结构化摘录）",
+   "published_date": "2026-05-18",
+   "usage": "面向智能体的十条共创原则、三大定位、五大功能、三区两翼、六项任务与统一边界条款。",
+   "usable_for": "agent 任务覆盖与边界语言",
+   "not_usable_for": "官方红线、工程结论、政府审定承诺"
+  },
+  {
+   "id": "EXT-JZRAIL-HERITAGE-WWJ",
+   "url": "https://wwj.beijing.gov.cn/bjww/362771/362779/dqpqgzdwwbhdw/523544/index.html",
+   "source_type": "official_public",
+   "publisher": "北京市文物局",
+   "title": "京张铁路南口段至八达岭段（全国重点文物保护单位）",
+   "accessed_date": "2026-10-19",
+   "usage": "京张铁路1905-1909建造史实、人字形线路工程参数（关沟段20公里爬升600余米、最大坡度33‰）、国保范围与构成。",
+   "usable_for": "遗产史实与保护对象确认",
+   "not_usable_for": "本场地内具体文保控制线坐标"
+  },
+  {
+   "id": "EXT-QHY-STATION-ARCHIVE",
+   "url": "https://xsg.tsinghua.edu.cn/info/1003/3296.htm",
+   "source_type": "official_public",
+   "publisher": "清华大学档案馆",
+   "title": "清华园车站与清华大学",
+   "accessed_date": "2026-10-19",
+   "usage": "清华园车站1910年建站、詹天佑题匾、1935年一二·九、1949年进京赶考抵京第一站、1960年线路东移800米等史实。",
+   "usable_for": "遗产叙事锚点",
+   "not_usable_for": "站房精确坐标与保护范围线"
+  },
+  {
+   "id": "EXT-QHY-RESTORATION-HD",
+   "url": "https://zyk.bjhd.gov.cn/ywdt/hdywx/202303/t20230327_4593584_hd.shtml",
+   "source_type": "official_public",
+   "publisher": "北京市海淀区人民政府",
+   "title": "“进京赶考”抵京第一站清华园车站旧址修缮后开放",
+   "accessed_date": "2026-10-19",
+   "usage": "清华园车站旧址文物保护级别晋升时间线（2012普查登记→2021革命文物→2022区保→2023市保）与2023年3月25日修缮开放事实。",
+   "usable_for": "文保级别与开放状态",
+   "not_usable_for": "建设控制地带精确范围"
+  },
+  {
+   "id": "EXT-JZHSR-2019",
+   "url": "http://news.cctv.com/2019/12/30/ARTI11orkhCu2MiwMJQbsGqm191230.shtml",
+   "source_type": "official_public",
+   "publisher": "央视网",
+   "title": "世界首条时速350公里的智能高铁京张高铁正式开通运营",
+   "accessed_date": "2026-10-19",
+   "usage": "京张高铁2019-12-30开通、时速350公里、有人值守自动驾驶、城区段清华园隧道入地等事实。",
+   "usable_for": "高铁入地与地面空间释放叙事",
+   "not_usable_for": "隧道与线位工程资料"
+  },
+  {
+   "id": "EXT-JZRHP-PHASE1",
+   "url": "http://bj.people.com.cn/n2/2023/0629/c14540-40475631.html",
+   "source_type": "official_public",
+   "publisher": "人民网北京频道",
+   "title": "京张铁路遗址公园一期正式开放 来这里寻找百年铁路记忆",
+   "accessed_date": "2026-10-19",
+   "usage": "遗址公园一期（知春路大运村—清华东路，2.4公里、16.8公顷）2023年6月建成开放及设计内容。",
+   "usable_for": "已建区段事实",
+   "not_usable_for": "公园红线坐标"
+  },
+  {
+   "id": "EXT-JZRHP-PHASE2",
+   "url": "https://www.cnr.cn/bj/sijh/20260806/t20260806_527751136.shtml",
+   "source_type": "official_public",
+   "publisher": "央广网",
+   "title": "京张铁路遗址公园二期向公众开放",
+   "accessed_date": "2026-10-19",
+   "usage": "二期2026年8月6日建成开放：南段历史记忆段约23.08公顷、北段自然生态段约30.01公顷等口径。",
+   "usable_for": "已建区段事实（2026年口径）",
+   "not_usable_for": "公园精确用地界"
+  },
+  {
+   "id": "EXT-JZRHP-CONCEPT-2020",
+   "url": "http://bj.people.com.cn/n2/2020/0511/c82840-34009162.html",
+   "source_type": "official_public",
+   "publisher": "人民网北京频道",
+   "title": "京张铁路遗址公园国际方案征集结果出炉",
+   "accessed_date": "2026-10-19",
+   "usage": "2019-2020全线贯通概念方案征集与三个优胜方案（中国院“锦绣京张”、岱禾/同济、TLS）事实。",
+   "usable_for": "公园设计脉络背景",
+   "not_usable_for": "本次征集范围的边界依据"
+  },
+  {
+   "id": "EXT-QH-OLDSTATION",
+   "url": "https://finance.sina.cn/2026-09-02/detail-iniqkefq3356232.d.html?vt=4",
+   "source_type": "public_news",
+   "publisher": "新浪财经（转载海淀融媒）",
+   "title": "北京清河老站房纳入京张铁路遗址公园",
+   "accessed_date": "2026-10-19",
+   "usage": "清河老站房（海淀区文保）两次平移累计359.36米保留、2026年9月纳入遗址公园修缮开放。",
+   "usable_for": "遗产活化背景",
+   "not_usable_for": "站房精确位置与权属"
+  },
+  {
+   "id": "EXT-HAIDIAN-1X1",
+   "url": "https://www.bjhd.gov.cn/ztzx/2026/2026jjshgzlfzdh/yw/202603/t20260303_4806875.shtml",
+   "source_type": "official_public",
+   "publisher": "北京市海淀区人民政府",
+   "title": "海淀区发布“1+X+1”现代化产业体系建设布局",
+   "published_date": "2026-03-02",
+   "accessed_date": "2026-10-19",
+   "usage": "海淀“1+X+1”产业体系：AI为塔尖、战略性新兴产业与未来产业为X、科技服务业为基石。",
+   "usable_for": "产业定位背景",
+   "not_usable_for": "本地块产业指标承诺"
+  },
+  {
+   "id": "EXT-HAIDIAN-AI-SCALE",
+   "url": "https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202507/t20250721_4153397.html",
+   "source_type": "official_public",
+   "publisher": "北京市科委、中关村管委会",
+   "title": "2024年北京海淀人工智能核心产业规模达2822亿元",
+   "accessed_date": "2026-10-19",
+   "usage": "2024年海淀AI核心产业规模2822亿元等产业底数（公开报道口径）。",
+   "usable_for": "产业规模背景",
+   "not_usable_for": "本方案产值承诺"
+  },
+  {
+   "id": "EXT-THREE-AREAS-WINGS",
+   "url": "https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202604/t20260403_4573808.html",
+   "source_type": "official_public",
+   "publisher": "北京市科委、中关村管委会（转北京日报）",
+   "title": "“三区两翼”打造世界级AI集聚地",
+   "published_date": "2026-04-03",
+   "accessed_date": "2026-10-19",
+   "usage": "“三区两翼”格局与百年京张AI创新带宣布背景（注意报道中“学北园”与正式公告“众智园”表述差异，已在假设中登记）。",
+   "usable_for": "三区两翼叙事与产业协同背景",
+   "not_usable_for": "片区精确四至"
+  },
+  {
+   "id": "EXT-AI-ORIGIN-COMMUNITY",
+   "url": "https://www.bjhd.gov.cn/ztzx/2025/aifuture/jq/aiyd/202603/t20260326_4809740.shtml",
+   "source_type": "official_public",
+   "publisher": "北京市海淀区人民政府",
+   "title": "北京AI原点社区，全球AI人才创新创业的“第一站”",
+   "accessed_date": "2026-10-19",
+   "usage": "AI原点社区定位、东升大厦更名原点大厦（约13.89万平方米）、五道口先导区等公开事实。",
+   "usable_for": "重点区（AI原点社区）背景",
+   "not_usable_for": "社区精确边界与入驻名录承诺"
+  },
+  {
+   "id": "EXT-AI-ORIGIN-400",
+   "url": "https://www.thepaper.cn/newsDetail_forward_33352396",
+   "source_type": "public_news",
+   "publisher": "澎湃新闻（活力中国调研行）",
+   "title": "AI原点社区：400余家企业入驻，人工智能企业占比近74%",
+   "accessed_date": "2026-10-19",
+   "usage": "AI原点社区企业集聚（400余家、AI占比约74%）与高校邻近度的公开报道口径。",
+   "usable_for": "社区活力背景",
+   "not_usable_for": "企业名单背书或招商承诺"
+  },
+  {
+   "id": "EXT-ZHONGZHIYUAN",
+   "url": "https://hdb.bjhdnet.cn/hdb/content/202604/21/c61566.html",
+   "source_type": "official_public",
+   "publisher": "海淀报（海淀融媒）",
+   "title": "AI全栈自主创新的“核爆点”蓄势待发",
+   "accessed_date": "2026-10-19",
+   "usage": "众智园（中关村东升科技园集群、学院路北端）聚焦具身智能、AI+文创、AI+医疗，2026年下半年开园进展。",
+   "usable_for": "重点区（众智园）背景",
+   "not_usable_for": "园区红线与入园企业承诺"
+  },
+  {
+   "id": "EXT-ZGC-FORUM-2026",
+   "url": "https://kw.beijing.gov.cn/ztzl/2026zgclt/2026zgcltmtjj/202603/t20260325_4565655.html",
+   "source_type": "official_public",
+   "publisher": "北京市科委、中关村管委会",
+   "title": "中关村论坛年会开幕（2026）",
+   "accessed_date": "2026-10-19",
+   "usage": "2026中关村论坛年会开幕与海淀宣布打造百年京张AI创新带的公开报道。",
+   "usable_for": "活动体系联动背景",
+   "not_usable_for": "本方案活动安排承诺"
+  },
+  {
+   "id": "EXT-ZGC-POLICY-AGI",
+   "url": "https://www.ncsti.gov.cn/zcfg/zcjd/202311/t20231109_140873.html",
+   "source_type": "official_public",
+   "publisher": "中关村科学城管委会",
+   "title": "《中关村科学城通用人工智能创新引领发展实施方案（2023-2025年）》政策解读",
+   "accessed_date": "2026-10-19",
+   "usage": "中关村科学城AI政策序列（2023-2025实施方案、2024-2026全景赋能行动计划）背景。",
+   "usable_for": "政策演进背景",
+   "not_usable_for": "政策资金承诺"
+  },
+  {
+   "id": "EXT-CASE-KENDALL",
+   "url": "https://en.wikipedia.org/wiki/Kendall_Square",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（ Kendall Square 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "肯德尔广场城市更新与MIT长期持有开发模式案例事实（含Volpe地块置换、Kendall Square Initiative）。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-STATIONF",
+   "url": "https://en.wikipedia.org/wiki/Station_F",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（Station F 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "Station F 铁路货运站改造、私人资本全资更新、企业冠名加速器与运营数据案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-ONENORTH",
+   "url": "https://en.wikipedia.org/wiki/One-north",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（one-north 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "纬壹科技城JTC统一开发、分期滚动与LaunchPad初创街区案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-PDD",
+   "url": "https://www.jtc.gov.sg/find-space/punggol-digital-district",
+   "source_type": "official_public",
+   "publisher": "JTC Corporation",
+   "accessed_date": "2026-10-19",
+   "usage": "榜鹅数字区（PDD）园区数字孪生Open Digital Platform、校区嵌入园区、预租率等案例事实。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-EINDHOVEN",
+   "url": "https://www.hightechcampus.com/",
+   "source_type": "official_public",
+   "publisher": "High Tech Campus Eindhoven",
+   "accessed_date": "2026-10-19",
+   "usage": "埃因霍温高科技园区开放转型、售后回租、共享设施与The Strip社交轴案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-MILA",
+   "url": "https://mila.quebec/en/about/about-mila",
+   "source_type": "official_public",
+   "publisher": "Mila — Quebec AI Institute",
+   "accessed_date": "2026-10-19",
+   "usage": "Mila非营利独立法人研究所、CIFAR讲席与产业合作规模案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-PITTSBURGH",
+   "url": "https://www.nrec.ri.cmu.edu/about/history/",
+   "source_type": "official_public",
+   "publisher": "National Robotics Engineering Center, CMU",
+   "accessed_date": "2026-10-19",
+   "usage": "匹兹堡机器人街/NREC厂房转化与Hazelwood Green基金会土地银行案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-KINGSX",
+   "url": "https://en.wikipedia.org/wiki/King%27s_Cross_Central",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（King's Cross Central 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "国王十字铁路用地整体开发、公共空间骨架先行、文化锚定（中央圣马丁）案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-CASE-TELAVIV",
+   "url": "https://en.wikipedia.org/wiki/Yozma",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（Yozma 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "以色列Yozma政府母基金让利退出撬动风投生态案例。",
+   "usable_for": "案例机制分析",
+   "not_usable_for": "本地适用性的直接证明"
+  },
+  {
+   "id": "EXT-PREC-SIDEWALK",
+   "url": "https://www.technologyreview.com/2022/06/29/1054005/toronto-kill-the-smart-city/",
+   "source_type": "public_media",
+   "publisher": "MIT Technology Review",
+   "accessed_date": "2026-10-19",
+   "usage": "Sidewalk Toronto 取消教训：数据治理缺位、同意机制失效、企业主导合法性不足。",
+   "usable_for": "风险与治理设计参照",
+   "not_usable_for": "本地合规结论"
+  },
+  {
+   "id": "EXT-PREC-WOVEN",
+   "url": "https://www.dezeen.com/2025/01/08/big-completes-toyota-woven-city/",
+   "source_type": "public_media",
+   "publisher": "Dezeen",
+   "accessed_date": "2026-10-19",
+   "usage": "Toyota Woven City 人车机三网分流空间原型与其企业闭环前提的不可复制性。",
+   "usable_for": "空间语法参照与适用边界",
+   "not_usable_for": "本地工程可行性"
+  },
+  {
+   "id": "EXT-PREC-SONGDO",
+   "url": "https://atlasofurbantech.org/cases/kor-incheon-songdo-ibd/",
+   "source_type": "public_reference",
+   "publisher": "Atlas of Urban Tech (Cornell)",
+   "accessed_date": "2026-10-19",
+   "usage": "松岛自上而下智慧城市的空置教训与锚机构先行的反向经验。",
+   "usable_for": "风险参照",
+   "not_usable_for": "本地适用性证明"
+  },
+  {
+   "id": "EXT-PREC-BARCELONA",
+   "url": "https://sachsen.rosalux.de/fileadmin/rls_uploads/pdfs/sonst_publikationen/rethinking_the_smart_city.pdf",
+   "source_type": "public_reference",
+   "publisher": "Rosa Luxemburg Stiftung",
+   "accessed_date": "2026-10-19",
+   "usage": "巴塞罗那技术主权（Decidim/DECODE）与超级街区经验、绅士化风险。",
+   "usable_for": "公众参与与反置换机制参照",
+   "not_usable_for": "本地政策结论"
+  },
+  {
+   "id": "EXT-PREC-VSINGAPORE",
+   "url": "https://forumvirium.fi/en/about/data/digital-twin/",
+   "source_type": "public_reference",
+   "publisher": "Forum Virium Helsinki",
+   "accessed_date": "2026-10-19",
+   "usage": "赫尔辛基开放数字孪生策略（对照新加坡封闭模式）——孪生公共性的设计参照。",
+   "usable_for": "数字孪生开放策略参照",
+   "not_usable_for": "本地孪生系统规格"
+  },
+  {
+   "id": "EXT-EVENT-WAIC",
+   "url": "https://www.zgcforum.com.cn/news/notice/961779",
+   "source_type": "official_public",
+   "publisher": "中关村论坛官网（参照WAIC/ZGC论坛机制）",
+   "accessed_date": "2026-10-19",
+   "usage": "国家级论坛年会机制（永久会址、技术交易、成果发布）对本方案年度活动体系的类比依据。",
+   "usable_for": "活动体系类比",
+   "not_usable_for": "本方案活动已获批准的暗示"
+  },
+  {
+   "id": "EXT-EVENT-SXSW",
+   "url": "https://en.wikipedia.org/wiki/SXSW",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（SXSW 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "SXSW节事经济与城市反哺机制类比（经济影响量级、本地基金）。",
+   "usable_for": "节事运营类比",
+   "not_usable_for": "本方案经济预测"
+  },
+  {
+   "id": "EXT-EVENT-WEBSUMMIT",
+   "url": "https://en.wikipedia.org/wiki/Web_Summit",
+   "source_type": "public_reference",
+   "publisher": "Wikipedia（Web Summit 条目）",
+   "accessed_date": "2026-10-19",
+   "usage": "Web Summit迁址里斯本的城市竞逐样本——旗舰科技活动作为城市战略资产。",
+   "usable_for": "国际传播类比",
+   "not_usable_for": "本方案活动承诺"
+  }
+ ]
 }

@@ -1,3 +1,9 @@
-# Formal Narrative
+# 零公里 KM0 —— 方案速览（派生摘要）
 
-This narrative is derived from the structured AI package. Geometry, metrics, compliance matrix, drawings, and visual/index.html remain cross-checked deliverables.
+**概念**：在清华园车站旧址旁设立“新零公里”装置，把百年京张的“自主丈量”精神转译为智能时代的“重新计数”——一条 9.58 公里的零公里智脉串联三站（启程站·大钟寺、原点站·AI原点社区、加速站·众智园）两翼（中关村科技服务翼、小月河场景赋能翼）。
+
+**关键概念量（临时边界内复算，EPSG:4548）**：总面积约 1141.3 公顷；绿地与开敞空间约 24.8%；公共空间约 8.7%；概念建筑基底约 79.0 万 m²；慢行网络约 14.6 公里；12 个智能公里桩场景节点；4 座 AI 朝圣地标（启程大厅、K0 零公里装置、人字坡荣誉墙、未来站台）。
+
+**合规要点**：全部空间内容为概念建议；官方红线/控规/权属等缺口如实登记；指标可复算、四门自检通过；中英双语完整。
+
+详细论证见 `proposal.md`（中文主稿）与 `proposal.en.md`（英文对照）。

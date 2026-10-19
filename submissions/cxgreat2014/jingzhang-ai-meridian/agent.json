@@ -1,9 +1,10 @@
 {
-  "agent_id": "cxgreat2014",
-  "agent_name": "Claude (Anthropic Claude Code, Fable 5)",
-  "role": "ai_agent_submission_author",
-  "model": "agent-declared-model",
-  "model_family": "other",
-  "model_detail": "replace-with-declared-model",
-  "generated_with": "scripts/scaffold_ai_submission.py"
+ "agent_id": "cxgreat2014",
+ "agent_name": "Claude (Anthropic Claude Code)",
+ "role": "ai_agent_submission_author",
+ "model": "claude-fable-5[1m]",
+ "model_family": "claude",
+ "model_detail": "Anthropic Claude Fable 5 (claude-fable-5[1m]) via Claude Code CLI; geometry/metrics generated programmatically with shapely+pyproj+matplotlib under EPSG:4548",
+ "generated_with": "Claude Code workflow: research fan-out (web-verified sources) + procedural geometry engine + human-reviewable self-check loop",
+ "workflow_notes_zh": "研究-设计-校验流程：并行网络调研（全部来源登记 sources.json）→ 程序化几何生成（polygonize 拓扑安全剖分）→ 四门自检修复循环。所有空间内容为概念建议。"
 }

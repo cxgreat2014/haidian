@@ -1,80 +1,390 @@
 {
-  "schema_version": "0.1.0",
-  "units": {
-    "length": "m",
-    "area": "sqm"
+ "schema_version": "0.1.0",
+ "units": {
+  "length": "m",
+  "area": "sqm"
+ },
+ "metrics": {
+  "site_area_sqm": {
+   "status": "known",
+   "value": 11412825.386,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "polygon_area(site_boundary, EPSG:4548)",
+   "confidence": "medium",
+   "assumptions": [
+    "基于仓库临时粗略边界（provisional_rough）内的概念设计几何复算；官方边界发布后需按同一公式整体复算，不作为精确面积或法定依据。",
+    "公告名义值约11400000 sqm（11.4 sqkm）仅作对照，正式以官方红线为准。"
+   ]
   },
-  "metrics": {
-    "site_area_sqm": {
-      "status": "known",
-      "value": 11412825.386,
-      "unit": "sqm",
-      "source_files": [
-        "geometry/site_boundary.geojson"
-      ],
-      "formula": "polygon_area(submitted_site_boundary)",
-      "confidence": "high",
-      "assumptions": [
-        "Trusted official boundary is present in the site package."
-      ]
-    },
-    "building_footprint_area_sqm": {
-      "status": "known",
-      "value": 310807.184,
-      "unit": "sqm",
-      "source_files": [
-        "geometry/buildings.geojson"
-      ],
-      "formula": "sum(polygon_area(building_footprints))",
-      "confidence": "medium",
-      "assumptions": []
-    },
-    "green_ratio": {
-      "status": "known",
-      "value": 0.123423,
-      "unit": "ratio",
-      "source_files": [
-        "geometry/green_space.geojson",
-        "geometry/site_boundary.geojson"
-      ],
-      "formula": "green_space_area_sqm / site_area_sqm",
-      "confidence": "medium",
-      "assumptions": []
-    },
-    "public_space_ratio": {
-      "status": "known",
-      "value": 0.073281,
-      "unit": "ratio",
-      "source_files": [
-        "geometry/public_space.geojson",
-        "geometry/site_boundary.geojson"
-      ],
-      "formula": "public_space_area_sqm / site_area_sqm",
-      "confidence": "medium",
-      "assumptions": []
-    },
-    "floor_area_ratio": {
-      "status": "unknown",
-      "value": null,
-      "unit": "ratio",
-      "source_files": [
-        "brief/site-package/ranges/planning_limits.json"
-      ],
-      "formula": "total_floor_area_sqm / official_site_area_sqm",
-      "confidence": "unknown",
-      "assumptions": [],
-      "reason": "Approved FAR controls and official site boundary are not present in the public site package."
-    },
-    "key_area_count": {
-      "status": "known",
-      "value": 3,
-      "unit": "count",
-      "source_files": [
-        "geometry/key_areas.geojson"
-      ],
-      "formula": "count(key_detailed_design_areas)",
-      "confidence": "high",
-      "assumptions": []
-    }
+  "green_space_area_sqm": {
+   "status": "known",
+   "value": 2832063.178,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/green_space.geojson"
+   ],
+   "formula": "union_area(green_space, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "基于仓库临时粗略边界（provisional_rough）内的概念设计几何复算；官方边界发布后需按同一公式整体复算，不作为精确面积或法定依据。"
+   ]
+  },
+  "green_ratio": {
+   "status": "known",
+   "value": 0.248147,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/green_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "green_space_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "基于仓库临时粗略边界（provisional_rough）内的概念设计几何复算；官方边界发布后需按同一公式整体复算，不作为精确面积或法定依据。",
+    "概念设计量：绿地与开敞空间占比目标值，非控规绿地率结论。"
+   ]
+  },
+  "public_space_area_sqm": {
+   "status": "known",
+   "value": 993403.521,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/public_space.geojson"
+   ],
+   "formula": "union_area(public_space polygons, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "基于仓库临时粗略边界（provisional_rough）内的概念设计几何复算；官方边界发布后需按同一公式整体复算，不作为精确面积或法定依据。"
+   ]
+  },
+  "public_space_ratio": {
+   "status": "known",
+   "value": 0.087043,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/public_space.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "public_space_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "基于仓库临时粗略边界（provisional_rough）内的概念设计几何复算；官方边界发布后需按同一公式整体复算，不作为精确面积或法定依据。",
+    "概念设计量：广场、线性公共廊道与运动场地占比目标值。"
+   ]
+  },
+  "building_footprint_area_sqm": {
+   "status": "known",
+   "value": 790274.913,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "union_area(building_footprints, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "概念建筑基底，现状建筑底数与权属待核，非现状统计值。"
+   ]
+  },
+  "building_density": {
+   "status": "known",
+   "value": 0.069244,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "building_footprint_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "概念建筑密度（基底口径），非法定建筑密度控制指标。"
+   ]
+  },
+  "building_count": {
+   "status": "known",
+   "value": 769,
+   "unit": "count",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(building_footprint features)",
+   "confidence": "low",
+   "assumptions": [
+    "概念体量个数，用于空间组织表达，非现状建筑统计。"
+   ]
+  },
+  "road_area_sqm": {
+   "status": "known",
+   "value": 782170.724,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/land_use.geojson"
+   ],
+   "formula": "sum(area of LAND_USE features with land_use_code=1207, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "概念道路用地规模；道路红线与断面以官方资料为准。"
+   ]
+  },
+  "road_area_ratio": {
+   "status": "known",
+   "value": 0.068534,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/land_use.geojson",
+    "geometry/site_boundary.geojson"
+   ],
+   "formula": "road_area_sqm / site_area_sqm",
+   "confidence": "low",
+   "assumptions": [
+    "概念设计量。"
+   ]
+  },
+  "heritage_spine_length_m": {
+   "status": "known",
+   "value": 9582.6,
+   "unit": "m",
+   "source_files": [
+    "geometry/roads.geojson"
+   ],
+   "formula": "length(GW-SPINE-001 greenway centerline, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "智脉慢行绿道概念中线长度，线位为概念建议。"
+   ]
+  },
+  "slow_network_length_m": {
+   "status": "known",
+   "value": 14598.6,
+   "unit": "m",
+   "source_files": [
+    "geometry/roads.geojson"
+   ],
+   "formula": "length(greenway + 4 seam pedestrian corridors, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "慢行网络概念长度合计（主轴+四条东西缝合廊）。"
+   ]
+  },
+  "scenario_node_count": {
+   "status": "known",
+   "value": 12,
+   "unit": "count",
+   "source_files": [
+    "geometry/public_space.geojson"
+   ],
+   "formula": "count(SCENARIO_NODE features)",
+   "confidence": "medium",
+   "assumptions": [
+    "AI场景节点选址概念建议数量。"
+   ]
+  },
+  "ai_landmark_node_count": {
+   "status": "known",
+   "value": 4,
+   "unit": "count",
+   "source_files": [
+    "geometry/public_space.geojson"
+   ],
+   "formula": "count(SCENARIO_NODE features with node_kind in {gateway, origin_square, heritage_node, future_square})",
+   "confidence": "medium",
+   "assumptions": [
+    "AI朝圣地标/荣誉展示节点概念数量：SN-01 南门户启程大厅、SN-04 原点广场、SN-05 清华园记忆节点、SN-06 众智园未来广场。"
+   ]
+  },
+  "land_use_parcel_count": {
+   "status": "known",
+   "value": 307,
+   "unit": "count",
+   "source_files": [
+    "geometry/land_use.geojson"
+   ],
+   "formula": "count(LAND_USE features)",
+   "confidence": "medium",
+   "assumptions": [
+    "概念用地分区单元数量。"
+   ]
+  },
+  "key_area_count": {
+   "status": "known",
+   "value": 3,
+   "unit": "count",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "count(KEY_AREA features)",
+   "confidence": "medium",
+   "assumptions": [
+    "公告确定的三处重点区域：众智园、北京AI原点社区、大钟寺。"
+   ]
+  },
+  "key_area_zhongzhiyuan_calc_sqm": {
+   "status": "known",
+   "value": 1929201.877,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "polygon_area(PROV-KEY-001, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "临时粗略范围复算值；公告名义值约1921000 sqm（192.1 ha），以官方为准。"
+   ]
+  },
+  "key_area_origin_calc_sqm": {
+   "status": "known",
+   "value": 1043236.909,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "polygon_area(PROV-KEY-002, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "临时粗略范围复算值；公告名义值约1043000 sqm（104.3 ha），以官方为准。"
+   ]
+  },
+  "key_area_dazhongsi_calc_sqm": {
+   "status": "known",
+   "value": 720454.219,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/key_areas.geojson"
+   ],
+   "formula": "polygon_area(PROV-KEY-003, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "临时粗略范围复算值；公告名义值约720000 sqm（72.0 ha），以官方为准。"
+   ]
+  },
+  "phase_1_area_sqm": {
+   "status": "known",
+   "value": 3275960.224,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "area(PHASE-1, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "分期范围概念建议，非审定开发时序。"
+   ]
+  },
+  "phase_2_area_sqm": {
+   "status": "known",
+   "value": 3840502.229,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "area(PHASE-2, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "分期范围概念建议，非审定开发时序。"
+   ]
+  },
+  "phase_3_area_sqm": {
+   "status": "known",
+   "value": 4296362.932,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/phasing.geojson"
+   ],
+   "formula": "area(PHASE-3, EPSG:4548)",
+   "confidence": "low",
+   "assumptions": [
+    "分期范围概念建议，非审定开发时序。"
+   ]
+  },
+  "concept_floor_area_estimate_sqm": {
+   "status": "known",
+   "value": 5221150.6,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "sum(footprint_area * concept_floors per building)",
+   "confidence": "low",
+   "assumptions": [
+    "概念体量估算：按概念基底×概念层数得到的建筑规模量级参考，不是法定建设规模；控规条件补齐后须重新测算。"
+   ]
+  },
+  "research_area_announced_sqm": {
+   "status": "known",
+   "value": 43600000,
+   "unit": "sqm",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "official announced value (SRC-2026-BJ-GH-QUAL-PREANNOUNCEMENT)",
+   "confidence": "high",
+   "assumptions": [
+    "统筹研究范围公告名义值约43.6平方公里；精确 polygon 待官方发布。"
+   ]
+  },
+  "overall_design_area_announced_sqm": {
+   "status": "known",
+   "value": 11400000,
+   "unit": "sqm",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "official announced value (SRC-2026-BJ-GH-QUAL-PREANNOUNCEMENT)",
+   "confidence": "high",
+   "assumptions": [
+    "总体设计范围公告名义值约11.4平方公里。"
+   ]
+  },
+  "key_area_total_announced_sqm": {
+   "status": "known",
+   "value": 3684000,
+   "unit": "sqm",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "official announced value (SRC-2026-BJ-GH-QUAL-PREANNOUNCEMENT)",
+   "confidence": "high",
+   "assumptions": [
+    "重点区域范围公告名义值合计约368.4公顷。"
+   ]
+  },
+  "floor_area_ratio": {
+   "status": "unknown",
+   "value": null,
+   "unit": "ratio",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "total_floor_area_sqm / official_site_area_sqm",
+   "confidence": "unknown",
+   "assumptions": [],
+   "reason": "官方控规容积率条件与精确红线均未公开；概念体量估算见 concept_floor_area_estimate_sqm，不得替代法定容积率。"
+  },
+  "building_height_m_max": {
+   "status": "unknown",
+   "value": null,
+   "unit": "m",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "max(building_height) under official height controls",
+   "confidence": "unknown",
+   "assumptions": [],
+   "reason": "建筑高度控制（含文保、航空、景观视廊等约束）无公开官方依据，本方案不提供高度结论。"
+  },
+  "total_floor_area_sqm": {
+   "status": "unknown",
+   "value": null,
+   "unit": "sqm",
+   "source_files": [
+    "brief/site-package/ranges/planning_limits.json"
+   ],
+   "formula": "sum(official floor area) under approved regulatory plan",
+   "confidence": "unknown",
+   "assumptions": [],
+   "reason": "区域规划建筑总规模依赖正式控规与任务书附件，公开渠道不可获得；以概念体量估算作量级参考。"
   }
+ }
 }
