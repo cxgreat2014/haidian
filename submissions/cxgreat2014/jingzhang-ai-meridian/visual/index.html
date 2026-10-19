@@ -1390,7 +1390,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
       <div class="card">
         <h3>图层</h3>
         <p style="font-size:.78rem;color:#776">图层开关（点击地图上的菱形桩号查看场景节点）</p>
-        <div class="toggles"><label><input type="checkbox" data-layer="lyr-land" checked><span class="sw" style="background:#D8CFE0"></span>用地分区</label><label><input type="checkbox" data-layer="lyr-phase" checked><span class="sw" style="background:#D2432A"></span>更新项目分期</label><label><input type="checkbox" data-layer="lyr-green" checked><span class="sw" style="background:#3E7C59"></span>蓝绿公共空间·绿地</label><label><input type="checkbox" data-layer="lyr-public" checked><span class="sw" style="background:#C8A15A"></span>广场与公共场地</label><label><input type="checkbox" data-layer="lyr-buildings" checked><span class="sw" style="background:#8C6D4F"></span>建筑概念基底</label><label><input type="checkbox" data-layer="lyr-roads" checked><span class="sw" style="background:#3E7C59"></span>交通慢行廊道</label><label><input type="checkbox" data-layer="lyr-keys" checked><span class="sw" style="background:#D2432A"></span>重点区域（临时范围）</label><label><input type="checkbox" data-layer="lyr-nodes" checked><span class="sw" style="background:#2C5F5A"></span>AI 场景桩号节点</label></div>
+        <div class="toggles"><label><input type="checkbox" data-layer="lyr-land"checked><span class="sw" style="background:#D8CFE0"></span>用地分区</label><label><input type="checkbox" data-layer="lyr-phase"><span class="sw" style="background:#D2432A"></span>更新项目分期</label><label><input type="checkbox" data-layer="lyr-green"checked><span class="sw" style="background:#3E7C59"></span>蓝绿公共空间·绿地</label><label><input type="checkbox" data-layer="lyr-public"checked><span class="sw" style="background:#C8A15A"></span>广场与公共场地</label><label><input type="checkbox" data-layer="lyr-buildings"checked><span class="sw" style="background:#8C6D4F"></span>建筑概念基底</label><label><input type="checkbox" data-layer="lyr-roads"checked><span class="sw" style="background:#2C5F5A"></span>交通慢行廊道（绿/红/蓝/灰）</label><label><input type="checkbox" data-layer="lyr-keys"checked><span class="sw" style="background:#D2432A"></span>重点区域（临时范围）</label><label><input type="checkbox" data-layer="lyr-nodes"checked><span class="sw" style="background:#2C5F5A"></span>AI 场景桩号节点</label></div>
       </div>
       <div class="nodeinfo" id="nodeinfo"><span class="km">KM0</span><span class="nm"> · 智能公里桩</span><p>点击任意桩号查看 AI 场景节点详情。</p></div>
     </div>
@@ -1419,6 +1419,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
       <div class="card metric"><div class="l">智能公里桩场景节点</div>
         <div class="v">12</div>
         <div class="f">count(SCENARIO_NODE) · 含 4 座朝圣地标</div></div></div>
+  <div class="note">单位说明：面积以公顷(ha)/万平方米、长度以公里计；概念总建筑规模量级约 522 万 m² 隐含平均约 6.6 层的概念层数假设（逐栋 concept_floors 见 geometry/buildings.geojson）。</div>
   <h3>待正式数据补齐（unknown · value=null）</h3>
   <div class="grid metric-row"><div class="card unknown"><div class="l">容积率 floor_area_ratio</div><div class="v">待正式数据补齐</div><div class="f">依赖未公开控规条件</div></div><div class="card unknown"><div class="l">建筑高度 building_height_m_max</div><div class="v">待正式数据补齐</div><div class="f">依赖高度控制与视廊约束</div></div><div class="card unknown"><div class="l">法定总建筑规模 total_floor_area_sqm</div><div class="v">待正式数据补齐</div><div class="f">依赖正式控规与任务书附件</div></div></div>
   <div class="card playground" style="margin-top:1rem">
@@ -1446,6 +1447,19 @@ input[type=range]{width:100%;accent-color:var(--signal)}
   <div class="note">307 个概念用地单元完整剖分临时边界（无重叠、无缺口）；代码取自自然资源部用地用海分类指南派生枚举。</div></div>
 </section>
 
+<section id="keyareas">
+  <div class="kicker">KEY AREAS</div>
+  <h2>重点区域：三站概念详细设计</h2>
+  <div class="grid metric-row">
+    <div class="card"><span class="pill prov">provisional</span><h4>加速站 · 众智园AI自主创新加速区</h4>
+      <p style="font-size:.82rem;color:#554">公告约 192.1 ha（临时复算 192.9 ha）｜花园型全栈创新街区：绿谷+院落、具身智能测试场、战略留白联动国家平台预留、学知园站微中心接驳。</p></div>
+    <div class="card"><span class="pill prov">provisional</span><h4>原点站 · 北京AI原点社区</h4>
+      <p style="font-size:.82rem;color:#554">公告约 104.3 ha（临时复算 104.3 ha）｜近校型创新策源：K0 装置与原点广场、开源发布廊、人才客厅、低扰动有机更新、双站一体化。</p></div>
+    <div class="card"><span class="pill prov">provisional</span><h4>启程站 · 大钟寺AI产业聚集区</h4>
+      <p style="font-size:.82rem;color:#554">公告约 72.0 ha（临时复算 72.0 ha）｜城市型产业集聚：智汇广场+四象限步行连通、智能原生消费场、数据要素沙盒、觉生寺文脉锚点。</p></div>
+  </div>
+</section>
+
 <section id="mobility">
   <div class="kicker">MOBILITY &amp; BLUE-GREEN</div>
   <h2>交通慢行与蓝绿公共空间</h2>
@@ -1453,6 +1467,22 @@ input[type=range]{width:100%;accent-color:var(--signal)}
     <div class="card"><h4>智脉绿道（南北贯通）</h4><p style="font-size:.85rem;color:#554">概念中线约 9.58 公里：步道+骑行道+无障碍连续界面，挂载时间桩与智能公里桩。</p></div>
     <div class="card"><h4>四条缝合廊（东西缝合）</h4><p style="font-size:.85rem;color:#554">大钟寺/原点/成府/众智园缝合廊，步行优先，约 5.0 公里。</p></div>
     <div class="card"><h4>轨道站点一体化（概念）</h4><p style="font-size:.85rem;color:#554">大钟寺 12/13 号线、五道口—清华东路西口 13/15 号线、清河站京张高铁三处接驳概念。</p></div>
+  </div>
+</section>
+
+<section id="buildings">
+  <div class="kicker">BUILDINGS &amp; RENEWAL</div>
+  <h2>建筑与更新项目（概念量）</h2>
+  <div class="grid metric-row">
+    <div class="card"><div class="l">概念建筑基底 / 数量</div>
+      <div class="v" style="font-size:1.35rem">79.0 万 m²</div>
+      <div class="f">769 个概念基底 · 拆改留为概念分类（遗产与既有创新载体优先保留改造）</div></div>
+    <div class="card"><div class="l">分期（概念建议）</div>
+      <div class="v" style="font-size:1.1rem">一期 28.7% → 二期 33.7% → 三期 37.6%</div>
+      <div class="f">面积由 geometry/phasing.geojson 复算；每期设触发条件与退出机制</div></div>
+    <div class="card"><div class="l">更新项目清单</div>
+      <div class="v" style="font-size:1.35rem">12</div>
+      <div class="f">类型/位置/依赖条件/主体类型/分期见 proposal.md 第十章</div></div>
   </div>
 </section>
 
@@ -1496,7 +1526,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
 <section id="landmarks">
   <div class="kicker">LANDMARKS</div>
   <h2>AI 朝圣地标与荣誉体系</h2>
-  <div class="grid metric-row"><div class="card"><h4>启程大厅</h4><p class="f" style="font-family:ui-monospace">K-6+109 南门户</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">AI体验门户：抵达、取票（可编程NFC公里票）、出发仪式。</p></div><div class="card"><h4>K0 零公里装置</h4><p class="f" style="font-family:ui-monospace">K0+000 清华园记忆节点</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">新零公里纪念装置：全球开发者“重新计数”的打卡原点。</p></div><div class="card"><h4>人字坡·攀登者荣誉墙</h4><p class="f" style="font-family:ui-monospace">K-0+838 原点广场</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">智能体贡献荣誉墙与开源成果展示廊：年度铭牌、到期轮换、遴选公示。</p></div><div class="card"><h4>未来站台</h4><p class="f" style="font-family:ui-monospace">K+2+339 众智园未来广场</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">全栈AI成果发布与演示常设展台，与绿谷测试场联动。</p></div></div>
+  <div class="grid metric-row"><div class="card"><h4>启程大厅</h4><p class="f" style="font-family:ui-monospace">K-6+109 南门户</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">AI体验门户：抵达、领取朝圣护照（NFC里程计数器）、出发仪式。</p></div><div class="card"><h4>人字坡·攀登者荣誉墙</h4><p class="f" style="font-family:ui-monospace">K-0+838 原点广场</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">智能体系统与人类团队联合铭牌：年度评选、三年任期、退役迁入里程档案馆。</p></div><div class="card"><h4>K0 零公里装置</h4><p class="f" style="font-family:ui-monospace">K0+000 清华园记忆节点</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">动线枢轴高潮：到访者在原点将计数清零重启，获得“第N位重新计数者”编号。</p></div><div class="card"><h4>未来站台</h4><p class="f" style="font-family:ui-monospace">K+2+339 众智园未来广场</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">全栈AI成果发布与演示常设展台，与绿谷测试场联动。</p></div></div>
 </section>
 
 <section id="events">
@@ -1521,12 +1551,25 @@ input[type=range]{width:100%;accent-color:var(--signal)}
   <div class="note">本地四门自检通过；四门报告与文件哈希由 self_check_submission.py 回写至 self_check.json 与 manifest.json。临时边界保留精度警示与复算触发条件。</div>
 </section>
 
+<section id="figures">
+  <div class="kicker">EVIDENCE FIGURES</div>
+  <h2>图件与图纸（由本包几何与指标程序化生成）</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+    <figure class="card"><img src="../assets/figures/site-overview.png" alt="总体概念总览" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">总体概念：一轴三站两翼</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/land-use-structure.png" alt="用地结构" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">三层范围传导与用地构成</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/key-areas.png" alt="重点区域" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">三站概念详细设计索引</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/mobility-bluegreen.png" alt="交通慢行与蓝绿" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">慢行×蓝绿复合系统</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/metrics-evidence.png" alt="指标证据链" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">指标复算与证据链</figcaption></figure>
+  </div>
+  <div class="note">A3 文册与 A0 展板见 drawings/（中英双语 PDF）。</div>
+</section>
+
 <section id="sources">
   <div class="kicker">SOURCES</div>
   <h2>来源（节选，完整见 sources.json）</h2>
   <table><thead><tr><th>ID</th><th>发布者</th><th>URL / 路径</th></tr></thead>
   <tbody><tr><td style="white-space:nowrap">SITE-PACKAGE</td><td>open-city-ai/haidian 仓库维护者（依据官方公告整理）</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/</td></tr><tr><td style="white-space:nowrap">SOURCE-REGISTRY</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">data/source_registry.json</td></tr><tr><td style="white-space:nowrap">PROCESSED-FACT-PACK</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">data/processed/agent_fact_pack.md</td></tr><tr><td style="white-space:nowrap">BOUNDARY-SOURCE</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/geometry/provisional_boundaries.geojson</td></tr><tr><td style="white-space:nowrap">KEY-AREA-SOURCE</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/geometry/provisional_boundaries.geojson</td></tr><tr><td style="white-space:nowrap">OFFICIAL-ANNOUNCEMENT</td><td>北京市规划和自然资源委员会海淀分局</td><td style="word-break:break-all;font-size:.75rem">https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html</td></tr><tr><td style="white-space:nowrap">AGENT-TASKBOOK</td><td>用户提供清权任务书（仓库结构化摘录）</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/agent_taskbook.json</td></tr><tr><td style="white-space:nowrap">EXT-JZRAIL-HERITAGE-WWJ</td><td>北京市文物局</td><td style="word-break:break-all;font-size:.75rem">https://wwj.beijing.gov.cn/bjww/362771/362779/dqpqgzdwwbhdw/523544/index.html</td></tr><tr><td style="white-space:nowrap">EXT-QHY-STATION-ARCHIVE</td><td>清华大学档案馆</td><td style="word-break:break-all;font-size:.75rem">https://xsg.tsinghua.edu.cn/info/1003/3296.htm</td></tr><tr><td style="white-space:nowrap">EXT-QHY-RESTORATION-HD</td><td>北京市海淀区人民政府</td><td style="word-break:break-all;font-size:.75rem">https://zyk.bjhd.gov.cn/ywdt/hdywx/202303/t20230327_4593584_hd.shtml</td></tr><tr><td style="white-space:nowrap">EXT-JZHSR-2019</td><td>央视网</td><td style="word-break:break-all;font-size:.75rem">http://news.cctv.com/2019/12/30/ARTI11orkhCu2MiwMJQbsGqm191230.shtml</td></tr><tr><td style="white-space:nowrap">EXT-JZRHP-PHASE1</td><td>人民网北京频道</td><td style="word-break:break-all;font-size:.75rem">http://bj.people.com.cn/n2/2023/0629/c14540-40475631.html</td></tr><tr><td style="white-space:nowrap">EXT-JZRHP-PHASE2</td><td>央广网</td><td style="word-break:break-all;font-size:.75rem">https://www.cnr.cn/bj/sijh/20260806/t20260806_527751136.shtml</td></tr><tr><td style="white-space:nowrap">EXT-JZRHP-CONCEPT-2020</td><td>人民网北京频道</td><td style="word-break:break-all;font-size:.75rem">http://bj.people.com.cn/n2/2020/0511/c82840-34009162.html</td></tr><tr><td style="white-space:nowrap">EXT-QH-OLDSTATION</td><td>新浪财经（转载海淀融媒）</td><td style="word-break:break-all;font-size:.75rem">https://finance.sina.cn/2026-09-02/detail-iniqkefq3356232.d.html?vt=4</td></tr><tr><td style="white-space:nowrap">EXT-HAIDIAN-1X1</td><td>北京市海淀区人民政府</td><td style="word-break:break-all;font-size:.75rem">https://www.bjhd.gov.cn/ztzx/2026/2026jjshgzlfzdh/yw/202603/t20260303_4806875.shtml</td></tr><tr><td style="white-space:nowrap">EXT-HAIDIAN-AI-SCALE</td><td>北京市科委、中关村管委会</td><td style="word-break:break-all;font-size:.75rem">https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202507/t20250721_4153397.html</td></tr><tr><td style="white-space:nowrap">EXT-THREE-AREAS-WINGS</td><td>北京市科委、中关村管委会（转北京日报）</td><td style="word-break:break-all;font-size:.75rem">https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202604/t20260403_4573808.html</td></tr></tbody></table>
-  <div class="note">共 40 条来源登记于 sources.json；此处为节选。</div>
+  <div class="note">共 44 条来源登记于 sources.json；此处为节选。</div>
 </section>
 
 <section id="assumptions">
@@ -1540,70 +1583,49 @@ input[type=range]{width:100%;accent-color:var(--signal)}
 <script>window.__KM0_DATA__={"nodes":[{"id":"SN-01","x":496.1,"y":6895.6,"km":"K-6+109","name":"京张智脉南门户·AI启程大厅","kind":"gateway"},{"id":"SN-02","x":406.2,"y":6426.3,"km":"K-5+453","name":"大钟寺智能原生消费体验场","kind":"retail_test"},{"id":"SN-03","x":298.7,"y":4970.8,"km":"K-3+448","name":"遗址公园中段·开发者散步道","kind":"heritage_walk"},{"id":"SN-04","x":306.4,"y":3071.7,"km":"K-0+838","name":"五道口原点广场·开源成果发布","kind":"origin_square"},{"id":"SN-05","x":379.3,"y":2466.1,"km":"K0+000","name":"清华园记忆节点·人字形叙事场","kind":"heritage_node"},{"id":"SN-06","x":528.4,"y":770.0,"km":"K+2+339","name":"众智园未来广场·全栈展示","kind":"future_square"},{"id":"SN-07","x":582.2,"y":220.9,"km":"K+3+097","name":"清河滨水·AI生态营地","kind":"waterfront"},{"id":"SN-08","x":685.5,"y":6509.1,"km":"K-5+613","name":"大钟寺站四象限步行连通示范点","kind":"station_link"},{"id":"SN-09","x":616.4,"y":3195.2,"km":"K-0+997","name":"原点社区人才客厅","kind":"talent_livingroom"},{"id":"SN-10","x":351.5,"y":1172.8,"km":"K+1+769","name":"众智园绿谷测试场","kind":"garden_test"},{"id":"SN-11","x":651.3,"y":2670.1,"km":"K-0+233","name":"小月河滨水夜航步道","kind":"river_nightwalk"},{"id":"SN-12","x":459.8,"y":1658.5,"km":"K+1+115","name":"双清路科创市集","kind":"market"}]};</script>
 <script>
 const D = window.__KM0_DATA__;
-const NS = 'http://www.w3.org/2000/svg';
-const svg = document.getElementById('km0map');
-function mk(tag, attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
-function layer(id){let g=document.getElementById(id);if(!g){g=mk('g',{id});svg.appendChild(g);}return g;}
-function build(){
-  const lg=layer('lyr-land');
-  D.land.forEach(p=>lg.appendChild(mk('path',{d:p.d,fill:p.c,stroke:'#fff','stroke-width':0.35})));
-  const pg=layer('lyr-phase');
-  const phFill={1:'rgba(210,67,42,.16)',2:'rgba(74,124,155,.16)',3:'rgba(140,109,79,.16)'};
-  D.phases.forEach(p=>pg.appendChild(mk('path',{d:p.d,fill:phFill[p.ph]||'#eee',stroke:'none'})));
-  const gg=layer('lyr-green');
-  D.green.forEach(p=>gg.appendChild(mk('path',{d:p.d,fill:'#3E7C59','fill-opacity':0.5})));
-  const pbg=layer('lyr-public');
-  D.public.forEach(p=>pbg.appendChild(mk('path',{d:p.d,fill:'#C8A15A','fill-opacity':0.75,stroke:'#fff','stroke-width':0.4})));
-  const bg=layer('lyr-buildings');
-  D.buildings.forEach(p=>bg.appendChild(mk('path',{d:p.d,fill:'#8C6D4F','fill-opacity':0.55})));
-  const rg=layer('lyr-roads');
-  D.roads.forEach(r=>{
-    const st={fill:'none','stroke-width':r.cls==='greenway'?3.4:1.6,
-      stroke:r.role==='existing_condition'?'#A9A29A':(r.cls==='greenway'?'#3E7C59':(r.cls==='pedestrian'?'#D2432A':'#4A7C9B'))};
-    if(r.cls==='pedestrian')st['stroke-dasharray']='7 4';
-    if(r.cls==='transit_connection')st['stroke-dasharray']='2.5 2.5';
-    rg.appendChild(mk('path',Object.assign({d:r.d},st)));
-  });
-  const kg=layer('lyr-keys');
-  D.keys.forEach(k=>kg.appendChild(mk('path',{d:k.d,fill:'none',stroke:'#D2432A','stroke-width':2.2,'stroke-dasharray':'9 5'})));
-  const ng=layer('lyr-nodes');
-  D.nodes.forEach(n=>{
-    const lm=['gateway','origin_square','heritage_node','future_square'].includes(n.kind);
-    const c=mk('rect',{x:n.x-7,y:n.y-7,width:14,height:14,transform:`rotate(45 ${n.x} ${n.y})`,
-      fill:lm?'#D2432A':'#2C5F5A',stroke:'#fff','stroke-width':1.4,tabindex:0,role:'button',
-      'aria-label':n.km+' '+n.name});
-    c.style.cursor='pointer';
-    const show=()=>{const box=document.getElementById('nodeinfo');
-      box.querySelector('.km').textContent=n.km;
-      box.querySelector('.nm').textContent=' '+n.name;
-      box.querySelector('p').textContent=n.desc;};
-    c.addEventListener('click',show);
-    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
-    c.appendChild(mk('title',{}));
-    c.querySelector('title').textContent=n.km+' '+n.name;
-    ng.appendChild(c);
-  });
-  const site=layer('lyr-site');
-}
 function bindToggles(){
   document.querySelectorAll('[data-layer]').forEach(cb=>{
-    cb.addEventListener('change',()=>{
-      document.getElementById(cb.dataset.layer).style.display=cb.checked?'':'none';
-    });
+    const g = document.getElementById(cb.dataset.layer);
+    if(!g) return;
+    g.style.display = cb.checked ? '' : 'none';
+    cb.addEventListener('change',()=>{ g.style.display = cb.checked ? '' : 'none'; });
+  });
+}
+function bindNodeInfo(){
+  const box = document.getElementById('nodeinfo');
+  if(!box) return;
+  const lookup = {};
+  (D.nodes||[]).forEach(n => lookup[n.id] = n);
+  document.querySelectorAll('rect.node').forEach(c=>{
+    const show = ()=>{
+      const n = lookup[c.getAttribute('data-id')];
+      if(!n) return;
+      box.querySelector('.km').textContent = n.km;
+      box.querySelector('.nm').textContent = ' ' + n.name;
+      box.querySelector('p').textContent = n.desc;
+    };
+    c.addEventListener('click', show);
+    c.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); show(); } });
   });
 }
 function playground(){
-  const r=document.getElementById('greenslider');const out=document.getElementById('greenout');
-  if(!r)return;
-  const site=parseFloat(r.dataset.site);
-  const pub=parseFloat(r.dataset.pub);
-  const f=()=>{const g=parseFloat(r.value)/100;
-    const need=site*g/10000;
-    const cur=site*pub/10000;
-    out.textContent=r.dataset.tpl.replace('{g}',(g*100).toFixed(1)).replace('{need}',need.toFixed(0)).replace('{cur}',cur.toFixed(0));};
-  r.addEventListener('input',f);f();
+  const r = document.getElementById('greenslider');
+  const out = document.getElementById('greenout');
+  const val = document.getElementById('greenval');
+  if(!r || !out) return;
+  const site = parseFloat(r.dataset.site);
+  const pub = parseFloat(r.dataset.pub);
+  const f = ()=>{
+    const g = parseFloat(r.value)/100;
+    const need = site*g/10000;
+    const cur = site*pub/10000;
+    if(val) val.textContent = r.value + '%';
+    out.textContent = r.dataset.tpl.replace('{g}',(g*100).toFixed(1)).replace('{need}',need.toFixed(0)).replace('{cur}',cur.toFixed(0));
+  };
+  r.addEventListener('input', f);
+  f();
 }
-bindToggles();bindNodeInfo();playground();
+bindToggles(); bindNodeInfo(); playground();
 </script>
 </body>
 </html>

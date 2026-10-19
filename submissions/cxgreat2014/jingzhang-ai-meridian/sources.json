@@ -188,7 +188,7 @@
    "title": "“三区两翼”打造世界级AI集聚地",
    "published_date": "2026-04-03",
    "accessed_date": "2026-10-19",
-   "usage": "“三区两翼”格局与百年京张AI创新带宣布背景（注意报道中“学北园”与正式公告“众智园”表述差异，已在假设中登记）。",
+   "usage": "“三区两翼”格局与百年京张AI创新带宣布背景；2026年4月报道口径：海淀AI核心产业规模超3500亿元、约占全国30%（注意报道中“学北园”与正式公告“众智园”表述差异，已在假设中登记）。",
    "usable_for": "三区两翼叙事与产业协同背景",
    "not_usable_for": "片区精确四至"
   },
@@ -253,7 +253,7 @@
    "source_type": "public_reference",
    "publisher": "Wikipedia（ Kendall Square 条目）",
    "accessed_date": "2026-10-19",
-   "usage": "肯德尔广场城市更新与MIT长期持有开发模式案例事实（含Volpe地块置换、Kendall Square Initiative）。",
+   "usage": "肯德尔广场城市更新与MIT长期持有开发模式案例事实（含Volpe地块7.5亿美元置换、Kendall Square Initiative约180万平方英尺混合用途楼宇）。",
    "usable_for": "案例机制分析",
    "not_usable_for": "本地适用性的直接证明"
   },
@@ -263,7 +263,7 @@
    "source_type": "public_reference",
    "publisher": "Wikipedia（Station F 条目）",
    "accessed_date": "2026-10-19",
-   "usage": "Station F 铁路货运站改造、私人资本全资更新、企业冠名加速器与运营数据案例。",
+   "usage": "Station F 铁路货运站改造案例：约2.5亿欧元私人资本全资更新、企业冠名加速器、低价工位与约800万欧元年运营成本自平衡机制。",
    "usable_for": "案例机制分析",
    "not_usable_for": "本地适用性的直接证明"
   },
@@ -313,7 +313,7 @@
    "source_type": "official_public",
    "publisher": "National Robotics Engineering Center, CMU",
    "accessed_date": "2026-10-19",
-   "usage": "匹兹堡机器人街/NREC厂房转化与Hazelwood Green基金会土地银行案例。",
+   "usage": "匹兹堡机器人街/NREC厂房转化与Hazelwood Green基金会土地银行案例（三大基金会2002年购入178英亩钢厂旧址长期持有）。",
    "usable_for": "案例机制分析",
    "not_usable_for": "本地适用性的直接证明"
   },
@@ -386,6 +386,50 @@
    "usage": "赫尔辛基开放数字孪生策略（对照新加坡封闭模式）——孪生公共性的设计参照。",
    "usable_for": "数字孪生开放策略参照",
    "not_usable_for": "本地孪生系统规格"
+  },
+  {
+   "id": "EXT-JZHSR-TUNNEL",
+   "url": "http://www.china.org.cn/chinese/2018-11/21/content_74150599.htm",
+   "source_type": "public_news",
+   "publisher": "中国网",
+   "title": "京张高铁清华园隧道贯通",
+   "accessed_date": "2026-10-19",
+   "usage": "京张高铁城区段清华园隧道全长6.02公里、下穿市政道路与管线等公开报道事实。",
+   "usable_for": "高铁入地工程叙事（长度口径）",
+   "not_usable_for": "隧道线位与工程安全结论"
+  },
+  {
+   "id": "EXT-DZS-JUESHENGSI",
+   "url": "https://www.bjhd.gov.cn/ztzx/2022/hdwl/hdwhsz/bwg/202508/t20250826_4784309_m.shtml",
+   "source_type": "official_public",
+   "publisher": "北京市海淀区人民政府（大钟寺古钟博物馆）",
+   "title": "大钟寺古钟博物馆（觉生寺）",
+   "accessed_date": "2026-10-19",
+   "usage": "觉生寺（大钟寺）清雍正十一年（1733年）敕建、永乐大钟（约46.5吨、铭文23万余字）、1996年第四批全国重点文物保护单位等史实。",
+   "usable_for": "大钟寺片区文脉史实",
+   "not_usable_for": "文物保护范围坐标"
+  },
+  {
+   "id": "EXT-DZS-BYTEDANCE",
+   "url": "https://news.bjd.com.cn/2026/04/09/11677734.shtml",
+   "source_type": "public_news",
+   "publisher": "北京日报",
+   "title": "字节跳动连续拿下两宗海淀地块",
+   "accessed_date": "2026-10-19",
+   "usage": "字节跳动2026年2月以28亿元竞得蓝景丽家大钟寺地块（规划“抖音集团数字经济产业园”，约4200工位+288间酒店客房、全部自持20年）、列入2026年北京市重点工程等大钟寺片区产业事实。",
+   "usable_for": "大钟寺产业集聚背景",
+   "not_usable_for": "本项目招商承诺或建设审批依据"
+  },
+  {
+   "id": "EXT-METRO-L12",
+   "url": "https://www.beijing.gov.cn/fuwu/bmfw/sy/jrts/202412/t20241213_3964726.html",
+   "source_type": "official_public",
+   "publisher": "北京市人民政府（市交通委）",
+   "title": "地铁12号线等新线12月15日开通试运营",
+   "accessed_date": "2026-10-19",
+   "usage": "北京地铁12号线（四季青桥—东坝北）2024年12月15日开通试运营、全自动无人驾驶等事实。",
+   "usable_for": "轨道交通现状背景",
+   "not_usable_for": "站点工程改造依据"
   },
   {
    "id": "EXT-EVENT-WAIC",

@@ -67,7 +67,7 @@
       "ai_package_stages": {
         "submissions/cxgreat2014/jingzhang-ai-meridian": "formal"
       },
-      "total_bytes": 13533560,
+      "total_bytes": 13892607,
       "maintainer_bypass": false
     },
     "stderr": ""
@@ -141,15 +141,15 @@
       "summary": {
         "standard_matrix_items": 9,
         "design_depth_items": 15,
-        "known_metric_refs_required": 26,
+        "known_metric_refs_required": 33,
         "proposal_format_version": "2",
         "evidence_contract": "section-anchors-plus-structured-audit",
         "proposal_reference_counts": {
-          "source": 30,
+          "source": 37,
           "standard": 7,
           "depth": 10,
           "data": 9,
-          "metric": 14
+          "metric": 22
         }
       }
     },

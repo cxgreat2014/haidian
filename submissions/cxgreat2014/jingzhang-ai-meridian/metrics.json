@@ -300,7 +300,7 @@
   },
   "concept_floor_area_estimate_sqm": {
    "status": "known",
-   "value": 5221150.6,
+   "value": 5424010.1,
    "unit": "sqm",
    "source_files": [
     "geometry/buildings.geojson"
@@ -309,6 +309,97 @@
    "confidence": "low",
    "assumptions": [
     "概念体量估算：按概念基底×概念层数得到的建筑规模量级参考，不是法定建设规模；控规条件补齐后须重新测算。"
+   ]
+  },
+  "industry_floor_area_estimate_sqm": {
+   "status": "known",
+   "value": 2058820.8,
+   "unit": "sqm",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "sum(footprint_area * concept_floors where building_type in {office, ai_r_and_d, lab})",
+   "confidence": "low",
+   "assumptions": [
+    "产业承载空间概念量：仅统计商务办公、AI研发、实验室业态的概念基底；不含住宅、商业、教育与社区配套；概念估算非产业指标承诺。"
+   ]
+  },
+  "renewal_retain_share_zhongzhiyuan": {
+   "status": "known",
+   "value": 0.1528,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(renewal_category=retain within PROV-KEY-001) / count(buildings within PROV-KEY-001)",
+   "confidence": "low",
+   "assumptions": [
+    "众智园片区保留类概念占比（按概念基底数量）；拆改留为概念分类，非拆改结论。"
+   ]
+  },
+  "renewal_retain_share_origin": {
+   "status": "known",
+   "value": 0.496,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(retain within PROV-KEY-002) / count(PROV-KEY-002 buildings)",
+   "confidence": "low",
+   "assumptions": [
+    "AI原点社区保留类概念占比（按概念基底数量）。"
+   ]
+  },
+  "renewal_retain_share_dazhongsi": {
+   "status": "known",
+   "value": 0.5492,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(retain within PROV-KEY-003) / count(PROV-KEY-003 buildings)",
+   "confidence": "low",
+   "assumptions": [
+    "大钟寺片区保留类概念占比（按概念基底数量）。"
+   ]
+  },
+  "renewal_new_share_zhongzhiyuan": {
+   "status": "known",
+   "value": 0.5417,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(new_construction within PROV-KEY-001) / count(PROV-KEY-001 buildings)",
+   "confidence": "low",
+   "assumptions": [
+    "众智园片区新建类概念占比（按概念基底数量）。"
+   ]
+  },
+  "renewal_new_share_origin": {
+   "status": "known",
+   "value": 0.152,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(new_construction within PROV-KEY-002) / count(PROV-KEY-002 buildings)",
+   "confidence": "low",
+   "assumptions": [
+    "AI原点社区新建类概念占比（按概念基底数量）。"
+   ]
+  },
+  "renewal_new_share_dazhongsi": {
+   "status": "known",
+   "value": 0.0984,
+   "unit": "ratio",
+   "source_files": [
+    "geometry/buildings.geojson"
+   ],
+   "formula": "count(new_construction within PROV-KEY-003) / count(PROV-KEY-003 buildings)",
+   "confidence": "low",
+   "assumptions": [
+    "大钟寺片区新建类概念占比（按概念基底数量）。"
    ]
   },
   "research_area_announced_sqm": {

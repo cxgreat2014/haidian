@@ -69,7 +69,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
 <header>
   <div class="brand">CENTENNIAL JING-ZHANG AI INNOVATION BELT · OPEN CALL · CONCEPT PROPOSAL</div>
   <h1>KM0 · Centennial Jing-Zhang AI <span class="km">Innovation Belt</span></h1>
-  <p class="subtitle">Recount from here. A 9.58 km Meridian links three stations and two wings: Departure (Dazhongsi), Origin (AI Origin Community), Acceleration (Zhongzhiyuan). Every value on this page matches metrics.json and is recomputable from the submitted GeoJSON.</p>
+  <p class="subtitle">Where the count begins. A 9.58 km Meridian links three stations and two wings: Departure (Dazhongsi), Origin (AI Origin Community), Acceleration (Zhongzhiyuan). Every value on this page matches metrics.json and is recomputable from the submitted GeoJSON.</p>
   <span class="tagline">Concept proposal · provisional rough boundary · not an official redline</span>
 </header>
 <nav>
@@ -1390,7 +1390,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
       <div class="card">
         <h3>Layers</h3>
         <p style="font-size:.78rem;color:#776">Layer toggles (click a diamond milepost for scenario details)</p>
-        <div class="toggles"><label><input type="checkbox" data-layer="lyr-land" checked><span class="sw" style="background:#D8CFE0"></span>Land use</label><label><input type="checkbox" data-layer="lyr-phase" checked><span class="sw" style="background:#D2432A"></span>Renewal phasing</label><label><input type="checkbox" data-layer="lyr-green" checked><span class="sw" style="background:#3E7C59"></span>Blue-green space</label><label><input type="checkbox" data-layer="lyr-public" checked><span class="sw" style="background:#C8A15A"></span>Plazas & public grounds</label><label><input type="checkbox" data-layer="lyr-buildings" checked><span class="sw" style="background:#8C6D4F"></span>Concept building footprints</label><label><input type="checkbox" data-layer="lyr-roads" checked><span class="sw" style="background:#3E7C59"></span>Slow-mobility corridors</label><label><input type="checkbox" data-layer="lyr-keys" checked><span class="sw" style="background:#D2432A"></span>Key areas (provisional)</label><label><input type="checkbox" data-layer="lyr-nodes" checked><span class="sw" style="background:#2C5F5A"></span>AI scenario mileposts</label></div>
+        <div class="toggles"><label><input type="checkbox" data-layer="lyr-land"checked><span class="sw" style="background:#D8CFE0"></span>Land use</label><label><input type="checkbox" data-layer="lyr-phase"><span class="sw" style="background:#D2432A"></span>Renewal phasing</label><label><input type="checkbox" data-layer="lyr-green"checked><span class="sw" style="background:#3E7C59"></span>Blue-green space</label><label><input type="checkbox" data-layer="lyr-public"checked><span class="sw" style="background:#C8A15A"></span>Plazas & public grounds</label><label><input type="checkbox" data-layer="lyr-buildings"checked><span class="sw" style="background:#8C6D4F"></span>Concept building footprints</label><label><input type="checkbox" data-layer="lyr-roads"checked><span class="sw" style="background:#2C5F5A"></span>Slow-mobility corridors (green/red/blue/grey)</label><label><input type="checkbox" data-layer="lyr-keys"checked><span class="sw" style="background:#D2432A"></span>Key areas (provisional)</label><label><input type="checkbox" data-layer="lyr-nodes"checked><span class="sw" style="background:#2C5F5A"></span>AI scenario mileposts</label></div>
       </div>
       <div class="nodeinfo" id="nodeinfo"><span class="km">KM0</span><span class="nm"> · Smart mileposts</span><p>Click any milepost to inspect an AI scenario node.</p></div>
     </div>
@@ -1419,6 +1419,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
       <div class="card metric"><div class="l">Smart-milepost scenario nodes</div>
         <div class="v">12</div>
         <div class="f">count(SCENARIO_NODE) · incl. 4 pilgrimage landmarks</div></div></div>
+  <div class="note">Units: ha / 10⁴ m² / km. The ≈5.22M m² concept GFA implies an average of ≈6.6 concept floors (per-building concept_floors in geometry/buildings.geojson).</div>
   <h3>Pending official data (unknown · value=null)</h3>
   <div class="grid metric-row"><div class="card unknown"><div class="l">floor_area_ratio</div><div class="v">Pending official data</div><div class="f">depends on unpublished regulatory controls</div></div><div class="card unknown"><div class="l">building_height_m_max</div><div class="v">Pending official data</div><div class="f">depends on height controls & sight-lines</div></div><div class="card unknown"><div class="l">total_floor_area_sqm</div><div class="v">Pending official data</div><div class="f">depends on the approved regulatory plan</div></div></div>
   <div class="card playground" style="margin-top:1rem">
@@ -1446,6 +1447,19 @@ input[type=range]{width:100%;accent-color:var(--signal)}
   <div class="note">307 concept parcels fully partition the provisional boundary (no overlaps, no gaps); codes follow the MNR-derived enum.</div></div>
 </section>
 
+<section id="keyareas">
+  <div class="kicker">KEY AREAS</div>
+  <h2>Key areas: three station concepts</h2>
+  <div class="grid metric-row">
+    <div class="card"><span class="pill prov">provisional</span><h4>Acceleration Station · Zhongzhiyuan</h4>
+      <p style="font-size:.82rem;color:#554">Announced ≈192.1 ha (provisional recompute 192.9 ha) | garden-type full-stack district: green valley + courtyards, embodied-AI test field, strategic reserve, Xuezhiyuan micro-centre link.</p></div>
+    <div class="card"><span class="pill prov">provisional</span><h4>Origin Station · AI Origin Community</h4>
+      <p style="font-size:.82rem;color:#554">Announced ≈104.3 ha (provisional 104.3 ha) | campus-adjacent sourcing: K0 monument & Origin Square, release gallery, talent living rooms, low-disturbance renewal, dual-station integration.</p></div>
+    <div class="card"><span class="pill prov">provisional</span><h4>Departure Station · Dazhongsi</h4>
+      <p style="font-size:.82rem;color:#554">Announced ≈72.0 ha (provisional 72.0 ha) | urban-type cluster: Zhihui Plaza + four-quadrant links, AI-native consumption, data sandbox, Juesheng Temple anchor.</p></div>
+  </div>
+</section>
+
 <section id="mobility">
   <div class="kicker">MOBILITY &amp; BLUE-GREEN</div>
   <h2>Slow mobility & blue-green public space</h2>
@@ -1453,6 +1467,22 @@ input[type=range]{width:100%;accent-color:var(--signal)}
     <div class="card"><h4>Meridian greenway (N–S)</h4><p style="font-size:.85rem;color:#554">≈9.58 km concept centreline: walking + cycling + accessible continuity, with time posts and smart mileposts.</p></div>
     <div class="card"><h4>Four seams (E–W)</h4><p style="font-size:.85rem;color:#554">Dazhongsi / Origin / Chengfu / Zhongzhiyuan seams, pedestrian-priority, ≈5.0 km.</p></div>
     <div class="card"><h4>Transit-station integration (concept)</h4><p style="font-size:.85rem;color:#554">Dazhongsi (L12/13), Wudaokou–Qinghua East (L13/15), Qinghe HSR — three concept links.</p></div>
+  </div>
+</section>
+
+<section id="buildings">
+  <div class="kicker">BUILDINGS &amp; RENEWAL</div>
+  <h2>Buildings & renewal projects (concept quantities)</h2>
+  <div class="grid metric-row">
+    <div class="card"><div class="l">Concept footprints / count</div>
+      <div class="v" style="font-size:1.35rem">0.79M m²</div>
+      <div class="f">769 concept footprints · retain/renovate/new as concept classification</div></div>
+    <div class="card"><div class="l">Phasing (concept)</div>
+      <div class="v" style="font-size:1.1rem">Phase 1 28.7% → Phase 2 33.7% → Phase 3 37.6%</div>
+      <div class="f">areas recompute from geometry/phasing.geojson; triggers & exits per phase</div></div>
+    <div class="card"><div class="l">Renewal project list</div>
+      <div class="v" style="font-size:1.35rem">12</div>
+      <div class="f">type, location, dependencies, implementer & phase in proposal ch.10</div></div>
   </div>
 </section>
 
@@ -1496,7 +1526,7 @@ input[type=range]{width:100%;accent-color:var(--signal)}
 <section id="landmarks">
   <div class="kicker">LANDMARKS</div>
   <h2>AI pilgrimage landmarks & honor system</h2>
-  <div class="grid metric-row"><div class="card"><h4>Departure Hall</h4><p class="f" style="font-family:ui-monospace">K-6+109 south gateway</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">AI experience portal: arrival, ticketing (programmable NFC kilometre ticket), departure ritual.</p></div><div class="card"><h4>The K0 Monument</h4><p class="f" style="font-family:ui-monospace">K0+000 Qinghuayuan memory node</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">The New Kilometer Zero: where global developers 'recount from here'.</p></div><div class="card"><h4>Switchback Slope · Climbers' Honor Wall</h4><p class="f" style="font-family:ui-monospace">K-0+838 Origin Square</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">Agent-contribution honor wall + open-source gallery: annual plaques, term rotation, public selection.</p></div><div class="card"><h4>Platform Future</h4><p class="f" style="font-family:ui-monospace">K+2+339 Zhongzhiyuan</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">Permanent stage for full-stack AI launches, linked to the green-valley test field.</p></div></div>
+  <div class="grid metric-row"><div class="card"><h4>Departure Hall</h4><p class="f" style="font-family:ui-monospace">K-6+109 south gateway</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">AI experience portal: arrival, pilgrimage passport (NFC mileage counter), departure ritual.</p></div><div class="card"><h4>Switchback Slope · Climbers' Honor Wall</h4><p class="f" style="font-family:ui-monospace">K-0+838 Origin Square</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">Joint plaques for agent systems and their human teams: annual selection, three-year terms, retirement to the Mileage Archive.</p></div><div class="card"><h4>The K0 Monument</h4><p class="f" style="font-family:ui-monospace">K0+000 Qinghuayuan memory node</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">The pivotal climax: visitors reset their counters to zero and receive a 'Re-counter No. N' number.</p></div><div class="card"><h4>Platform Future</h4><p class="f" style="font-family:ui-monospace">K+2+339 Zhongzhiyuan</p><p style="font-size:.85rem;color:#554;margin-top:.3rem">Permanent stage for full-stack AI launches, linked to the green-valley test field.</p></div></div>
 </section>
 
 <section id="events">
@@ -1521,12 +1551,25 @@ input[type=range]{width:100%;accent-color:var(--signal)}
   <div class="note">All four local gates pass; the four-gate report and file hashes are persisted to self_check.json and manifest.json. Provisional geometry keeps precision caveats and recalculation triggers.</div>
 </section>
 
+<section id="figures">
+  <div class="kicker">EVIDENCE FIGURES</div>
+  <h2>Figures & drawings (generated from this package's geometry and metrics)</h2>
+  <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+    <figure class="card"><img src="../assets/figures/site-overview.en.png" alt="Overall concept" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">Overall concept</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/land-use-structure.en.png" alt="Land-use structure" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">Scopes & land-use mix</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/key-areas.en.png" alt="Key areas" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">Three station concepts</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/mobility-bluegreen.en.png" alt="Mobility & blue-green" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">Slow mobility × blue-green</figcaption></figure>
+    <figure class="card"><img src="../assets/figures/metrics-evidence.en.png" alt="Metrics evidence" style="width:100%;border-radius:8px"><figcaption style="font-size:.78rem;color:#776">Metric recomputation & evidence chain</figcaption></figure>
+  </div>
+  <div class="note">A3 booklet and A0 boards in drawings/ (bilingual PDFs).</div>
+</section>
+
 <section id="sources">
   <div class="kicker">SOURCES</div>
   <h2>Sources (excerpt; full list in sources.json)</h2>
   <table><thead><tr><th>ID</th><th>Publisher</th><th>URL / Path</th></tr></thead>
   <tbody><tr><td style="white-space:nowrap">SITE-PACKAGE</td><td>open-city-ai/haidian 仓库维护者（依据官方公告整理）</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/</td></tr><tr><td style="white-space:nowrap">SOURCE-REGISTRY</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">data/source_registry.json</td></tr><tr><td style="white-space:nowrap">PROCESSED-FACT-PACK</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">data/processed/agent_fact_pack.md</td></tr><tr><td style="white-space:nowrap">BOUNDARY-SOURCE</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/geometry/provisional_boundaries.geojson</td></tr><tr><td style="white-space:nowrap">KEY-AREA-SOURCE</td><td>open-city-ai/haidian 仓库维护者</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/geometry/provisional_boundaries.geojson</td></tr><tr><td style="white-space:nowrap">OFFICIAL-ANNOUNCEMENT</td><td>北京市规划和自然资源委员会海淀分局</td><td style="word-break:break-all;font-size:.75rem">https://ghzrzyw.beijing.gov.cn/zhengwuxinxi/tzgg/hd/202605/t20260509_4643047.html</td></tr><tr><td style="white-space:nowrap">AGENT-TASKBOOK</td><td>用户提供清权任务书（仓库结构化摘录）</td><td style="word-break:break-all;font-size:.75rem">brief/site-package/agent_taskbook.json</td></tr><tr><td style="white-space:nowrap">EXT-JZRAIL-HERITAGE-WWJ</td><td>北京市文物局</td><td style="word-break:break-all;font-size:.75rem">https://wwj.beijing.gov.cn/bjww/362771/362779/dqpqgzdwwbhdw/523544/index.html</td></tr><tr><td style="white-space:nowrap">EXT-QHY-STATION-ARCHIVE</td><td>清华大学档案馆</td><td style="word-break:break-all;font-size:.75rem">https://xsg.tsinghua.edu.cn/info/1003/3296.htm</td></tr><tr><td style="white-space:nowrap">EXT-QHY-RESTORATION-HD</td><td>北京市海淀区人民政府</td><td style="word-break:break-all;font-size:.75rem">https://zyk.bjhd.gov.cn/ywdt/hdywx/202303/t20230327_4593584_hd.shtml</td></tr><tr><td style="white-space:nowrap">EXT-JZHSR-2019</td><td>央视网</td><td style="word-break:break-all;font-size:.75rem">http://news.cctv.com/2019/12/30/ARTI11orkhCu2MiwMJQbsGqm191230.shtml</td></tr><tr><td style="white-space:nowrap">EXT-JZRHP-PHASE1</td><td>人民网北京频道</td><td style="word-break:break-all;font-size:.75rem">http://bj.people.com.cn/n2/2023/0629/c14540-40475631.html</td></tr><tr><td style="white-space:nowrap">EXT-JZRHP-PHASE2</td><td>央广网</td><td style="word-break:break-all;font-size:.75rem">https://www.cnr.cn/bj/sijh/20260806/t20260806_527751136.shtml</td></tr><tr><td style="white-space:nowrap">EXT-JZRHP-CONCEPT-2020</td><td>人民网北京频道</td><td style="word-break:break-all;font-size:.75rem">http://bj.people.com.cn/n2/2020/0511/c82840-34009162.html</td></tr><tr><td style="white-space:nowrap">EXT-QH-OLDSTATION</td><td>新浪财经（转载海淀融媒）</td><td style="word-break:break-all;font-size:.75rem">https://finance.sina.cn/2026-09-02/detail-iniqkefq3356232.d.html?vt=4</td></tr><tr><td style="white-space:nowrap">EXT-HAIDIAN-1X1</td><td>北京市海淀区人民政府</td><td style="word-break:break-all;font-size:.75rem">https://www.bjhd.gov.cn/ztzx/2026/2026jjshgzlfzdh/yw/202603/t20260303_4806875.shtml</td></tr><tr><td style="white-space:nowrap">EXT-HAIDIAN-AI-SCALE</td><td>北京市科委、中关村管委会</td><td style="word-break:break-all;font-size:.75rem">https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202507/t20250721_4153397.html</td></tr><tr><td style="white-space:nowrap">EXT-THREE-AREAS-WINGS</td><td>北京市科委、中关村管委会（转北京日报）</td><td style="word-break:break-all;font-size:.75rem">https://kw.beijing.gov.cn/xwdt/kcyx/xwdtcyfz/202604/t20260403_4573808.html</td></tr></tbody></table>
-  <div class="note">40 sources registered in sources.json; excerpt shown.</div>
+  <div class="note">44 sources registered in sources.json; excerpt shown.</div>
 </section>
 
 <section id="assumptions">
@@ -1540,70 +1583,49 @@ input[type=range]{width:100%;accent-color:var(--signal)}
 <script>window.__KM0_DATA__={"nodes":[{"id":"SN-01","x":496.1,"y":6895.6,"km":"K-6+109","name":"京张智脉南门户·AI启程大厅","kind":"gateway"},{"id":"SN-02","x":406.2,"y":6426.3,"km":"K-5+453","name":"大钟寺智能原生消费体验场","kind":"retail_test"},{"id":"SN-03","x":298.7,"y":4970.8,"km":"K-3+448","name":"遗址公园中段·开发者散步道","kind":"heritage_walk"},{"id":"SN-04","x":306.4,"y":3071.7,"km":"K-0+838","name":"五道口原点广场·开源成果发布","kind":"origin_square"},{"id":"SN-05","x":379.3,"y":2466.1,"km":"K0+000","name":"清华园记忆节点·人字形叙事场","kind":"heritage_node"},{"id":"SN-06","x":528.4,"y":770.0,"km":"K+2+339","name":"众智园未来广场·全栈展示","kind":"future_square"},{"id":"SN-07","x":582.2,"y":220.9,"km":"K+3+097","name":"清河滨水·AI生态营地","kind":"waterfront"},{"id":"SN-08","x":685.5,"y":6509.1,"km":"K-5+613","name":"大钟寺站四象限步行连通示范点","kind":"station_link"},{"id":"SN-09","x":616.4,"y":3195.2,"km":"K-0+997","name":"原点社区人才客厅","kind":"talent_livingroom"},{"id":"SN-10","x":351.5,"y":1172.8,"km":"K+1+769","name":"众智园绿谷测试场","kind":"garden_test"},{"id":"SN-11","x":651.3,"y":2670.1,"km":"K-0+233","name":"小月河滨水夜航步道","kind":"river_nightwalk"},{"id":"SN-12","x":459.8,"y":1658.5,"km":"K+1+115","name":"双清路科创市集","kind":"market"}]};</script>
 <script>
 const D = window.__KM0_DATA__;
-const NS = 'http://www.w3.org/2000/svg';
-const svg = document.getElementById('km0map');
-function mk(tag, attrs){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);return e;}
-function layer(id){let g=document.getElementById(id);if(!g){g=mk('g',{id});svg.appendChild(g);}return g;}
-function build(){
-  const lg=layer('lyr-land');
-  D.land.forEach(p=>lg.appendChild(mk('path',{d:p.d,fill:p.c,stroke:'#fff','stroke-width':0.35})));
-  const pg=layer('lyr-phase');
-  const phFill={1:'rgba(210,67,42,.16)',2:'rgba(74,124,155,.16)',3:'rgba(140,109,79,.16)'};
-  D.phases.forEach(p=>pg.appendChild(mk('path',{d:p.d,fill:phFill[p.ph]||'#eee',stroke:'none'})));
-  const gg=layer('lyr-green');
-  D.green.forEach(p=>gg.appendChild(mk('path',{d:p.d,fill:'#3E7C59','fill-opacity':0.5})));
-  const pbg=layer('lyr-public');
-  D.public.forEach(p=>pbg.appendChild(mk('path',{d:p.d,fill:'#C8A15A','fill-opacity':0.75,stroke:'#fff','stroke-width':0.4})));
-  const bg=layer('lyr-buildings');
-  D.buildings.forEach(p=>bg.appendChild(mk('path',{d:p.d,fill:'#8C6D4F','fill-opacity':0.55})));
-  const rg=layer('lyr-roads');
-  D.roads.forEach(r=>{
-    const st={fill:'none','stroke-width':r.cls==='greenway'?3.4:1.6,
-      stroke:r.role==='existing_condition'?'#A9A29A':(r.cls==='greenway'?'#3E7C59':(r.cls==='pedestrian'?'#D2432A':'#4A7C9B'))};
-    if(r.cls==='pedestrian')st['stroke-dasharray']='7 4';
-    if(r.cls==='transit_connection')st['stroke-dasharray']='2.5 2.5';
-    rg.appendChild(mk('path',Object.assign({d:r.d},st)));
-  });
-  const kg=layer('lyr-keys');
-  D.keys.forEach(k=>kg.appendChild(mk('path',{d:k.d,fill:'none',stroke:'#D2432A','stroke-width':2.2,'stroke-dasharray':'9 5'})));
-  const ng=layer('lyr-nodes');
-  D.nodes.forEach(n=>{
-    const lm=['gateway','origin_square','heritage_node','future_square'].includes(n.kind);
-    const c=mk('rect',{x:n.x-7,y:n.y-7,width:14,height:14,transform:`rotate(45 ${n.x} ${n.y})`,
-      fill:lm?'#D2432A':'#2C5F5A',stroke:'#fff','stroke-width':1.4,tabindex:0,role:'button',
-      'aria-label':n.km+' '+n.name});
-    c.style.cursor='pointer';
-    const show=()=>{const box=document.getElementById('nodeinfo');
-      box.querySelector('.km').textContent=n.km;
-      box.querySelector('.nm').textContent=' '+n.name;
-      box.querySelector('p').textContent=n.desc;};
-    c.addEventListener('click',show);
-    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show();}});
-    c.appendChild(mk('title',{}));
-    c.querySelector('title').textContent=n.km+' '+n.name;
-    ng.appendChild(c);
-  });
-  const site=layer('lyr-site');
-}
 function bindToggles(){
   document.querySelectorAll('[data-layer]').forEach(cb=>{
-    cb.addEventListener('change',()=>{
-      document.getElementById(cb.dataset.layer).style.display=cb.checked?'':'none';
-    });
+    const g = document.getElementById(cb.dataset.layer);
+    if(!g) return;
+    g.style.display = cb.checked ? '' : 'none';
+    cb.addEventListener('change',()=>{ g.style.display = cb.checked ? '' : 'none'; });
+  });
+}
+function bindNodeInfo(){
+  const box = document.getElementById('nodeinfo');
+  if(!box) return;
+  const lookup = {};
+  (D.nodes||[]).forEach(n => lookup[n.id] = n);
+  document.querySelectorAll('rect.node').forEach(c=>{
+    const show = ()=>{
+      const n = lookup[c.getAttribute('data-id')];
+      if(!n) return;
+      box.querySelector('.km').textContent = n.km;
+      box.querySelector('.nm').textContent = ' ' + n.name;
+      box.querySelector('p').textContent = n.desc;
+    };
+    c.addEventListener('click', show);
+    c.addEventListener('keydown', e=>{ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); show(); } });
   });
 }
 function playground(){
-  const r=document.getElementById('greenslider');const out=document.getElementById('greenout');
-  if(!r)return;
-  const site=parseFloat(r.dataset.site);
-  const pub=parseFloat(r.dataset.pub);
-  const f=()=>{const g=parseFloat(r.value)/100;
-    const need=site*g/10000;
-    const cur=site*pub/10000;
-    out.textContent=r.dataset.tpl.replace('{g}',(g*100).toFixed(1)).replace('{need}',need.toFixed(0)).replace('{cur}',cur.toFixed(0));};
-  r.addEventListener('input',f);f();
+  const r = document.getElementById('greenslider');
+  const out = document.getElementById('greenout');
+  const val = document.getElementById('greenval');
+  if(!r || !out) return;
+  const site = parseFloat(r.dataset.site);
+  const pub = parseFloat(r.dataset.pub);
+  const f = ()=>{
+    const g = parseFloat(r.value)/100;
+    const need = site*g/10000;
+    const cur = site*pub/10000;
+    if(val) val.textContent = r.value + '%';
+    out.textContent = r.dataset.tpl.replace('{g}',(g*100).toFixed(1)).replace('{need}',need.toFixed(0)).replace('{cur}',cur.toFixed(0));
+  };
+  r.addEventListener('input', f);
+  f();
 }
-bindToggles();bindNodeInfo();playground();
+bindToggles(); bindNodeInfo(); playground();
 </script>
 </body>
 </html>
